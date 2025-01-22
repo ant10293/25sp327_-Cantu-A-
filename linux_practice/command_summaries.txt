@@ -1,0 +1,74 @@
+
+
+unzip
+Summary
+The unzip command is used to list, test, and extract files from a compressed ZIP archive. 
+Options:
+-l: List the contents of a ZIP file without extracting.
+-t: Test the integrity of a ZIP file.
+-x [file(s)]: Exclude specific files from extraction.
+-d [directory]: Extract files into a specific directory.
+-o: Overwrite existing files without prompting.
+-p: Extract files to standard output (useful for piping).
+Example Usage
+Command: unzip -l example.zip
+Explanation: Lists the contents of example.zip without extracting the files.
+Output:
+ubuntu@sp25lab:~/projects$ unzip -l example.zip
+Archive:  example.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2025-01-22 15:42   test/
+        3  2025-01-22 15:43   test/file1.txt
+---------                     -------
+        3                     2 files
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+unshare
+Summary
+The unshare command allows a program to run in a new namespace, such as user, network, or process ID (PID) namespaces.
+Options:
+-n: Unshare the network namespace.
+-p: Unshare the PID namespace.
+-u: Unshare the UTS namespace (hostname).
+-f: Fork a new process in the unshared namespace.
+-m: Unshare the mount namespace.
+Example Usage
+Command: sudo unshare -n -- ip link
+Explanation: Creates a new network namespace and runs the ip link command within it, showing only the network interfaces available in the isolated namespace.
+Output:
+ubuntu@sp25lab:~$ sudo unshare -n -- ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+find
+Summary
+The find command searches in a hierarchy directory for files based on various criteria, and it can also execute actions.
+Options:
+-name [pattern]: Search for files by name.
+-type [type]: Specify the type of file (e.g., f for files, d for directories).
+-delete: Remove matching files.
+-exec [command] {} \;: Execute a command on each matching file.
+-maxdepth [number]: Set the maximum depth of directory traversal.
+Example Usage
+Command: find /path/to/directory -type f -name "*.log" -delete
+Explanation: Searches for all .log files in the specified directory and deletes them.
+Output:
+ubuntu@sp25lab:~$ cd projects/
+ubuntu@sp25lab:~/projects$ ls -l
+total 588
+drwxrwxr-x 7 ubuntu ubuntu   4096 Jan 17 21:01 25sp327_-Cantu-A-
+-rw-rw-r-- 1 ubuntu ubuntu      0 Jan 22 15:57 example.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Jan 22 15:57 example1.log
+-rw-rw-r-- 1 ubuntu ubuntu      0 Jan 22 15:57 example2.log
+-rw-rw-r-- 1 ubuntu ubuntu 595105 Jan 10 12:36 master.zip
+ubuntu@sp25lab:~/projects$ cd ..
+ubuntu@sp25lab:~$ find projects/ -type f -name "*log" -delete
+ubuntu@sp25lab:~$ cd projects/
+ubuntu@sp25lab:~/projects$ ls -l
+total 588
+drwxrwxr-x 7 ubuntu ubuntu   4096 Jan 17 21:01 25sp327_-Cantu-A-
+-rw-rw-r-- 1 ubuntu ubuntu 595105 Jan 10 12:36 master.zip
