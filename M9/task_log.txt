@@ -1,0 +1,10 @@
+[2025-04-18 15:13:36] [Thread 250146] Sum of numbers < 544 is 147696
+[2025-04-18 15:13:36] [Thread 250147] Sum of numbers < 639 is 203841
+[2025-04-18 15:13:37] [Thread 250146] Sum of numbers < 672 is 225456
+[2025-04-18 15:13:37] [Thread 250147] Sum of numbers < 722 is 260281
+[2025-04-18 15:13:37] [Thread 250146] Log message 1
+[2025-04-18 15:13:37] [Thread 250147] Sum of numbers < 808 is 326028
+[2025-04-18 15:13:38] [Thread 250146] Simulated delay of 0 seconds and 222 milliseconds.
+[2025-04-18 15:13:38] [Thread 250147] Log message 2
+[2025-04-18 15:13:39] [Thread 250146] Sum of numbers < 758 is 286903
+[2025-04-18 15:13:39] [Thread 250147] Simulated delay of 0 seconds and 151 milliseconds.
