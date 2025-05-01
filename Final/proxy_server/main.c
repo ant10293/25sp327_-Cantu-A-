@@ -19,7 +19,6 @@
 
 #define LISTEN_PORT 8080 // Proxy listens on this port
 #define BACKLOG     128
-/* #define NUM_WORKERS 8 */         
 
 // job wrapper expected by worker_thread.c                      
 typedef struct job {
